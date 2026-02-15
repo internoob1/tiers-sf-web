@@ -66,3 +66,22 @@ tr:nth-child(even) {
 tr td .rank-cell {
     background-clip: padding-box;
 }
+
+/* --- BADGES PARA DATOS IMPORTANTES (TIERS SF) --- */
+
+.cell-box {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+/* Hover suave */
+.cell-box:hover {
+    background: #2a2a2a;
+    border-color: #555;
+    transform: translateY(-2px);
+}
