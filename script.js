@@ -9,7 +9,7 @@ fetch("tiers_ranking.json")
 
             row.innerHTML = `
                 <td data-label="Posición">
-                    <span class="cell-box">${player.position}</span>
+                    <span class="cell-box pos-${player.position}">${player.position}</span>
                 </td>
 
                 <td data-label="Nick">
