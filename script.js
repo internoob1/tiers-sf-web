@@ -8,10 +8,21 @@ fetch("tiers_ranking.json")
             const row = document.createElement("tr");
 
             row.innerHTML = `
-                <td data-label="Posición">${player.position}</td>
-                <td data-label="Nick">${player.nick}</td>
-                <td data-label="Región">${player.region}</td>
-                <td data-label="Score">${player.score}</td>
+                <td data-label="Posición">
+                    <span class="cell-box">${player.position}</span>
+                </td>
+
+                <td data-label="Nick">
+                    <span class="cell-box">${player.nick}</span>
+                </td>
+
+                <td data-label="Región">
+                    <span class="cell-box">${player.region}</span>
+                </td>
+
+                <td data-label="Score">
+                    <span class="cell-box">${player.score}</span>
+                </td>
 
                 <td data-label="Melee">
                     <span class="rank-cell ${player.meleeRank}">
