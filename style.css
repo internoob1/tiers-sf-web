@@ -165,3 +165,53 @@ h1 {
         transform: translateY(0);
     }
 }
+
+/* Fondo oscuro del popup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+}
+
+/* Tarjeta centrada */
+.modal-content {
+    background: #1a1a1a;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    animation: popIn 0.3s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Animación */
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Botón cerrar */
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: #ff4444;
+}
+
+/* Rangos dentro del popup */
+#modalRanks .rank-cell {
+    margin: 4px;
+    font-size: 12px;
+}
