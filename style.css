@@ -151,3 +151,22 @@ h1 {
         transform: translateY(0);
     }
 }
+
+/* Colores especiales para top 3 */
+.pos-1 {
+    background: #ffd700 !important; /* Dorado */
+    color: #000 !important;
+    border-color: #e6c200 !important;
+}
+
+.pos-2 {
+    background: #c0c0c0 !important; /* Plateado */
+    color: #000 !important;
+    border-color: #a8a8a8 !important;
+}
+
+.pos-3 {
+    background: #8e5c42 !important; /* Bronce / Marrón */
+    color: #fff !important;
+    border-color: #704531 !important;
+}
