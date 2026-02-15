@@ -12,6 +12,18 @@
         "position": 1
     },
     {
+        "id": "817781158431293493",
+        "nick": "Ciri",
+        "region": "SA",
+        "meleeRank": "LT3",
+        "weaponsRank": "Unranked",
+        "mixedRank": "HT5",
+        "score": 12,
+        "lastTestDate": "2026-02-15T20:35:13.338Z",
+        "testerId": "790702870286696468",
+        "position": 2
+    },
+    {
         "id": "1364813093741527050",
         "nick": "SyumikS",
         "region": "SA",
@@ -21,7 +33,7 @@
         "score": 10,
         "lastTestDate": "2026-02-15T04:41:19.893Z",
         "testerId": "790702870286696468",
-        "position": 2
+        "position": 3
     },
     {
         "id": "869938712769855539",
@@ -32,18 +44,6 @@
         "mixedRank": "LT5",
         "score": 3,
         "lastTestDate": "2026-02-15T03:59:20.479Z",
-        "testerId": "790702870286696468",
-        "position": 3
-    },
-    {
-        "id": "817781158431293493",
-        "nick": "Ciri",
-        "region": "SA",
-        "meleeRank": "Unranked",
-        "weaponsRank": "Unranked",
-        "mixedRank": "HT5",
-        "score": 2,
-        "lastTestDate": "2026-02-15T03:58:46.701Z",
         "testerId": "790702870286696468",
         "position": 4
     }
