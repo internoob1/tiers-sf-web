@@ -41,6 +41,10 @@ fetch("tiers_ranking.json")
                         ${player.mixedRank}
                     </span>
                 </td>
+               <td data-label="Posición">
+       <span class="cell-box pos-${player.position}">${player.position}
+            </span>
+        </td>
             `;
 
             tbody.appendChild(row);
