@@ -2,34 +2,69 @@
 body {
     background: #111;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     text-align: center;
 }
 
-/* Tabla base */
+/* Tabla estilo tarjeta (como el ejemplo) */
 table {
     margin: 20px auto;
-    border-collapse: collapse;
     width: 90%;
     max-width: 900px;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* separación entre filas */
 }
 
 /* Encabezados */
 th {
-    background: #222;
-    border: 1px solid #444;
-    padding: 10px;
+    background: #1a1a1a;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+}
+
+/* Filas estilo tarjeta */
+tr {
+    background: #141414;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(5px);
+    animation: fadeInRow 0.5s ease forwards;
+}
+
+/* Bordes redondeados */
+td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* Celdas */
 td {
-    border: 1px solid #444;
-    padding: 10px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: none;
+    vertical-align: middle;
 }
 
-/* Filas alternadas (NO debe pisar los rangos) */
-tr:nth-child(even) {
-    background: #1a1a1a;
+/* Hover profesional */
+tr:hover {
+    background: #1d1d1d !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
+}
+
+/* Fade-in */
+@keyframes fadeInRow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- ESTILOS OFICIALES TIERS SF --- */
@@ -38,10 +73,17 @@ tr:nth-child(even) {
 .rank-cell {
     color: #fff;
     border-radius: 6px;
-    padding: 6px 10px;
+    padding: 4px 8px;
     display: inline-block;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Micro-animación en rangos */
+.rank-cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
 
 /* Colores oficiales */
@@ -56,69 +98,9 @@ tr:nth-child(even) {
 .HT5 { background-color: #607d8b; }
 .LT5 { background-color: #546e7a; }
 
-/* Unranked */
 .Unranked {
     background-color: #333;
     color: #fff;
-}
-
-/* Evitar que el fondo del <tr> tape el color del rango */
-tr td .rank-cell {
-    background-clip: padding-box;
-}
-
-/* --- BADGES PARA DATOS IMPORTANTES (TIERS SF) --- */
-
-.cell-box {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    padding: 6px 10px;
-    border-radius: 6px;
-    display: inline-block;
-    font-weight: 600;
-    transition: all 0.25s ease;
-}
-
-/* Hover suave */
-.cell-box:hover {
-    background: #2a2a2a;
-    border-color: #555;
-    transform: translateY(-2px);
-}
-/* Fade-in al cargar filas */
-tr {
-    opacity: 0;
-    transform: translateY(5px);
-    animation: fadeInRow 0.5s ease forwards;
-}
-
-@keyframes fadeInRow {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hover suave en filas */
-tr:hover {
-    background-color: #242424 !important;
-    transform: scale(1.01);
-    transition: all 0.2s ease;
-}
-
-/* Micro-animación en rangos */
-.rank-cell {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.rank-cell:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 8px rgba(255,255,255,0.2);
-}
-
-/* Transición global */
-* {
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Badges TIERS SF */
@@ -132,27 +114,14 @@ tr:hover {
     transition: all 0.25s ease;
 }
 
+/* Hover suave en badges */
 .cell-box:hover {
     background: #2a2a2a;
     border-color: #555;
     transform: translateY(-2px);
 }
 
-/* Animación del título */
-h1 {
-    animation: titleFade 0.8s ease forwards;
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-@keyframes titleFade {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* TOP 3 metálico premium */
+/* --- TOP 3 metálico premium --- */
 .pos-1 {
     background: linear-gradient(135deg, #f7d774, #e6c200);
     color: #000 !important;
@@ -174,11 +143,25 @@ h1 {
     box-shadow: 0 0 6px rgba(139, 69, 19, 0.25);
 }
 
-/* Evitar que los badges del top 3 se oscurezcan al hacer hover */
+/* Evitar que los top 3 se oscurezcan */
 .pos-1:hover,
 .pos-2:hover,
 .pos-3:hover {
     background: inherit !important;
     border-color: inherit !important;
     transform: none !important;
+}
+
+/* Animación del título */
+h1 {
+    animation: titleFade 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+@keyframes titleFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
