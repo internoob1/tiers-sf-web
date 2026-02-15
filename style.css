@@ -174,3 +174,11 @@ h1 {
     box-shadow: 0 0 6px rgba(139, 69, 19, 0.25);
 }
 
+/* Evitar que los badges del top 3 se oscurezcan al hacer hover */
+.pos-1:hover,
+.pos-2:hover,
+.pos-3:hover {
+    background: inherit !important;
+    border-color: inherit !important;
+    transform: none !important;
+}
