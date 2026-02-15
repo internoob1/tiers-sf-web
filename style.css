@@ -215,3 +215,39 @@ h1 {
     margin: 4px;
     font-size: 12px;
 }
+#searchContainer {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#searchInput {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: white;
+    width: 200px;
+}
+
+#searchBtn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #444;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#searchBtn:hover {
+    background: #666;
+}
+
+#searchResult {
+    margin-top: 15px;
+    color: #ff5555;
+    font-weight: 600;
+}
+
