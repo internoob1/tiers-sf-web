@@ -46,5 +46,41 @@
         "lastTestDate": "2026-02-15T03:59:20.479Z",
         "testerId": "790702870286696468",
         "position": 4
+    },
+    {
+        "id": "1452400465143922819",
+        "nick": "Nutreja",
+        "region": "SA",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "Unranked",
+        "score": 0,
+        "lastTestDate": null,
+        "testerId": null,
+        "position": 5
+    },
+    {
+        "id": "774885628730408960",
+        "nick": "Luck",
+        "region": "SA",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "Unranked",
+        "score": 0,
+        "lastTestDate": null,
+        "testerId": null,
+        "position": 6
+    },
+    {
+        "id": "684286098985582599",
+        "nick": "Tantti",
+        "region": "SA",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "Unranked",
+        "score": 0,
+        "lastTestDate": null,
+        "testerId": null,
+        "position": 7
     }
 ]
