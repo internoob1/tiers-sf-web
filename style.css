@@ -1,3 +1,4 @@
+/* Fondo general */
 body {
     background: #111;
     color: white;
@@ -5,6 +6,7 @@ body {
     text-align: center;
 }
 
+/* Tabla base */
 table {
     margin: 20px auto;
     border-collapse: collapse;
@@ -12,15 +14,55 @@ table {
     max-width: 900px;
 }
 
-th, td {
+/* Encabezados */
+th {
+    background: #222;
     border: 1px solid #444;
     padding: 10px;
 }
 
-th {
-    background: #222;
+/* Celdas */
+td {
+    border: 1px solid #444;
+    padding: 10px;
 }
 
+/* Filas alternadas (NO debe pisar los rangos) */
 tr:nth-child(even) {
     background: #1a1a1a;
+}
+
+/* --- ESTILOS OFICIALES TIERS SF --- */
+
+/* Contenedor del rango */
+.rank-cell {
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Colores oficiales */
+.HT1 { background-color: #ffd700; color: #000 !important; }
+.LT1 { background-color: #daa520; color: #000 !important; }
+.HT2 { background-color: #c0c0c0; color: #000 !important; }
+.LT2 { background-color: #a9a9a9; color: #000 !important; }
+.HT3 { background-color: #8e5c42; }
+.LT3 { background-color: #5d4037; }
+.HT4 { background-color: #c08081; }
+.LT4 { background-color: #a67c7c; }
+.HT5 { background-color: #607d8b; }
+.LT5 { background-color: #546e7a; }
+
+/* Unranked */
+.Unranked {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Evitar que el fondo del <tr> tape el color del rango */
+tr td .rank-cell {
+    background-clip: padding-box;
 }
