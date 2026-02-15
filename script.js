@@ -64,11 +64,20 @@ document.addEventListener("click", function(e) {
         document.getElementById("modalPosition").textContent = "Posición: " + player.position;
 
         const ranksDiv = document.getElementById("modalRanks");
-        ranksDiv.innerHTML = `
-            <span class="rank-cell ${player.meleeRank}">${player.meleeRank}</span>
-            <span class="rank-cell ${player.weaponsRank}">${player.weaponsRank}</span>
-            <span class="rank-cell ${player.mixedRank}">${player.mixedRank}</span>
-        `;
+ranksDiv.innerHTML = `
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 6px; font-weight: 700;">
+        <span>Melee</span>
+        <span>Weapons</span>
+        <span>Mixed</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+        <span class="rank-cell ${player.meleeRank}">${player.meleeRank}</span>
+        <span class="rank-cell ${player.weaponsRank}">${player.weaponsRank}</span>
+        <span class="rank-cell ${player.mixedRank}">${player.mixedRank}</span>
+    </div>
+`;
+
 
         document.getElementById("playerModal").style.display = "block";
     }
