@@ -152,21 +152,25 @@ h1 {
     }
 }
 
-/* Colores especiales para top 3 */
+/* TOP 3 metálico premium */
 .pos-1 {
-    background: #ffd700 !important; /* Dorado */
+    background: linear-gradient(135deg, #f7d774, #e6c200);
     color: #000 !important;
-    border-color: #e6c200 !important;
+    border: 1px solid #d4b100;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.25);
 }
 
 .pos-2 {
-    background: #c0c0c0 !important; /* Plateado */
+    background: linear-gradient(135deg, #dcdcdc, #b8b8b8);
     color: #000 !important;
-    border-color: #a8a8a8 !important;
+    border: 1px solid #a0a0a0;
+    box-shadow: 0 0 6px rgba(192, 192, 192, 0.25);
 }
 
 .pos-3 {
-    background: #8e5c42 !important; /* Bronce / Marrón */
+    background: linear-gradient(135deg, #b07d56, #8e5c42);
     color: #fff !important;
-    border-color: #704531 !important;
+    border: 1px solid #704531;
+    box-shadow: 0 0 6px rgba(139, 69, 19, 0.25);
 }
+
