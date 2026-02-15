@@ -13,7 +13,9 @@ fetch("tiers_ranking.json")
                 </td>
 
                 <td data-label="Nick">
-                    <span class="cell-box">${player.nick}</span>
+                    <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
+                        ${player.nick}
+                    </span>
                 </td>
 
                 <td data-label="Región">
@@ -49,3 +51,36 @@ fetch("tiers_ranking.json")
     .catch(err => {
         console.error("Error cargando ranking:", err);
     });
+
+
+// --- POPUP DE JUGADOR ---
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("nick-click")) {
+        const player = JSON.parse(e.target.getAttribute("data-player"));
+
+        document.getElementById("modalNick").textContent = player.nick;
+        document.getElementById("modalRegion").textContent = "Región: " + player.region;
+        document.getElementById("modalScore").textContent = "Score: " + player.score;
+        document.getElementById("modalPosition").textContent = "Posición: " + player.position;
+
+        const ranksDiv = document.getElementById("modalRanks");
+        ranksDiv.innerHTML = `
+            <span class="rank-cell ${player.meleeRank}">${player.meleeRank}</span>
+            <span class="rank-cell ${player.weaponsRank}">${player.weaponsRank}</span>
+            <span class="rank-cell ${player.mixedRank}">${player.mixedRank}</span>
+        `;
+
+        document.getElementById("playerModal").style.display = "block";
+    }
+});
+
+/* Cerrar popup */
+document.querySelector(".close-btn").onclick = function() {
+    document.getElementById("playerModal").style.display = "none";
+};
+
+window.onclick = function(e) {
+    if (e.target === document.getElementById("playerModal")) {
+        document.getElementById("playerModal").style.display = "none";
+    }
+};
