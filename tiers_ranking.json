@@ -48,6 +48,18 @@
         "position": 4
     },
     {
+        "id": "1072530084377939988",
+        "nick": "Elias 2",
+        "region": "SA",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "LT4",
+        "score": 3,
+        "lastTestDate": "2026-02-16T05:24:18.528Z",
+        "testerId": "790702870286696468",
+        "position": 5
+    },
+    {
         "id": "1452400465143922819",
         "nick": "Nutreja",
         "region": "SA",
@@ -57,7 +69,7 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
-        "position": 5
+        "position": 6
     },
     {
         "id": "774885628730408960",
@@ -69,7 +81,7 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
-        "position": 6
+        "position": 7
     },
     {
         "id": "684286098985582599",
@@ -81,6 +93,18 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
-        "position": 7
+        "position": 8
+    },
+    {
+        "id": "235156837270290433",
+        "nick": "X-Blaster",
+        "region": "SA",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "Unranked",
+        "score": 0,
+        "lastTestDate": null,
+        "testerId": null,
+        "position": 9
     }
 ]
