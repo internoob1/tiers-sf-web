@@ -172,3 +172,10 @@ searchInput.addEventListener("input", function () {
         autocompleteList.appendChild(li);
     });
 });
+
+// Cerrar autocompletado al hacer clic fuera
+document.addEventListener("click", function(e) {
+    if (!searchInput.contains(e.target) && !autocompleteList.contains(e.target)) {
+        autocompleteList.style.display = "none";
+    }
+});
