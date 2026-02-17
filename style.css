@@ -362,3 +362,81 @@ h1 {
 #autocompleteList li:hover {
     background: #2a2a2a;
 }
+
+/* ============================
+   BUSCADOR MEJORADO TIERS SF
+   ============================ */
+
+#searchContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 10px 14px 10px 34px; /* espacio para la lupa */
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: white;
+    width: 220px;
+    transition: all 0.25s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 8px rgba(255,255,255,0.15);
+    background: #1c1c1c;
+}
+
+/* Icono de lupa */
+#searchContainer::before {
+    content: "🔍";
+    position: absolute;
+    left: calc(50% - 100px); /* centrado respecto al input */
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+}
+
+/* ============================
+   AUTOCOMPLETADO ANIMADO
+   ============================ */
+
+#autocompleteList {
+    list-style: none;
+    margin: 10px auto 0;
+    padding: 0;
+    width: 220px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    display: none;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#autocompleteList.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#autocompleteList li {
+    padding: 8px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    transition: background 0.2s ease;
+}
+
+#autocompleteList li:last-child {
+    border-bottom: none;
+}
+
+#autocompleteList li:hover {
+    background: #2a2a2a;
+}
