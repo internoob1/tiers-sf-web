@@ -106,5 +106,17 @@
         "lastTestDate": null,
         "testerId": null,
         "position": 9
+    },
+    {
+        "id": "1109943314872016896",
+        "nick": "Emi",
+        "region": "SA",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "Unranked",
+        "score": 0,
+        "lastTestDate": null,
+        "testerId": null,
+        "position": 10
     }
 ]
