@@ -252,56 +252,67 @@ h1 {
 }
 
 /* ============================
-   HEADER ESPORTS TIERS SF (MEJORADO)
+   HEADER ESPORTS TIERS SF (SIN DORADO)
    ============================ */
 
 #tiers-header {
-    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-    padding: 45px 20px 35px 20px;
+    background: linear-gradient(135deg, #000000, #161616);
+    padding: 55px 20px 40px 20px;
     text-align: center;
-    margin-bottom: 35px;
-    border-bottom: 4px solid #ffd700; /* Línea dorada más fuerte */
-    box-shadow: 0 6px 25px rgba(0,0,0,0.6); /* Mucho más notorio */
+    margin-bottom: 45px;
+
+    /* Línea inferior gris metálica */
+    border-bottom: 3px solid #2e2e2e;
+
+    /* Sombra profunda esports */
+    box-shadow: 0 10px 35px rgba(0,0,0,0.75);
+
+    /* Borde superior sutil */
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .header-title {
-    font-size: 38px; /* Más grande */
+    font-size: 42px;
     font-weight: 700;
     margin: 0;
     color: #ffffff;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+
     opacity: 0;
     animation: headerFade 0.8s ease forwards;
-    text-shadow: 0 0 12px rgba(255,255,255,0.15); /* Glow suave */
+
+    /* Glow suave blanco */
+    text-shadow: 0 0 14px rgba(255,255,255,0.12);
 }
 
 .header-subtitle {
-    font-size: 17px;
-    color: #cfcfcf;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    color: #c8c8c8;
+    margin-top: 12px;
+    margin-bottom: 25px;
+
     opacity: 0;
     animation: headerFade 1s ease forwards;
 }
 
 .header-divider {
-    width: 60%;
-    height: 3px;
-    background: #ffd700;
+    width: 65%;
+    height: 2px;
+    background: #2e2e2e;
     margin: 0 auto;
     border-radius: 2px;
+
     opacity: 0;
     animation: headerFade 1.2s ease forwards;
 }
 
-/* Animación suave */
 @keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
     }
 }
