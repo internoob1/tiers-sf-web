@@ -294,3 +294,31 @@ h1 {
         transform: translateY(0);
     }
 }
+
+/* ============================
+   FOOTER PROFESIONAL TIERS SF
+   ============================ */
+
+#tiers-footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    background: #111; /* Igual que el body */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    animation: footerFade 0.8s ease forwards;
+}
+
+@keyframes footerFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
