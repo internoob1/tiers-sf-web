@@ -36,6 +36,18 @@
         "position": 3
     },
     {
+        "id": "235156837270290433",
+        "nick": "X-Blaster",
+        "region": "SA",
+        "meleeRank": "LT3",
+        "weaponsRank": "Unranked",
+        "mixedRank": "HT4",
+        "score": 15,
+        "lastTestDate": "2026-02-17T17:13:43.823Z",
+        "testerId": "790702870286696468",
+        "position": 4
+    },
+    {
         "id": "817781158431293493",
         "nick": "Ciri",
         "region": "SA",
@@ -45,7 +57,7 @@
         "score": 12,
         "lastTestDate": "2026-02-15T20:35:13.338Z",
         "testerId": "790702870286696468",
-        "position": 4
+        "position": 5
     },
     {
         "id": "1364813093741527050",
@@ -57,7 +69,7 @@
         "score": 10,
         "lastTestDate": "2026-02-16T15:13:04.485Z",
         "testerId": "790702870286696468",
-        "position": 5
+        "position": 6
     },
     {
         "id": "869938712769855539",
@@ -69,7 +81,7 @@
         "score": 3,
         "lastTestDate": "2026-02-15T03:59:20.479Z",
         "testerId": "790702870286696468",
-        "position": 6
+        "position": 7
     },
     {
         "id": "774885628730408960",
@@ -81,23 +93,11 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
-        "position": 7
+        "position": 8
     },
     {
         "id": "684286098985582599",
         "nick": "Tantti",
-        "region": "SA",
-        "meleeRank": "Unranked",
-        "weaponsRank": "Unranked",
-        "mixedRank": "Unranked",
-        "score": 0,
-        "lastTestDate": null,
-        "testerId": null,
-        "position": 8
-    },
-    {
-        "id": "235156837270290433",
-        "nick": "X-Blaster",
         "region": "SA",
         "meleeRank": "Unranked",
         "weaponsRank": "Unranked",
