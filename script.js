@@ -141,7 +141,7 @@ searchInput.addEventListener("input", function () {
     const text = searchInput.value.toLowerCase().trim();
 
     if (text === "") {
-        autocompleteList.style.display = "none";
+        autocompleteList.classList.remove("show");
         autocompleteList.innerHTML = "";
         return;
     }
@@ -151,12 +151,12 @@ searchInput.addEventListener("input", function () {
     );
 
     if (matches.length === 0) {
-        autocompleteList.style.display = "block";
+        autocompleteList.classList.add("show");
         autocompleteList.innerHTML = `<li>No se encontró</li>`;
         return;
     }
 
-    autocompleteList.style.display = "block";
+    autocompleteList.classList.add("show");
     autocompleteList.innerHTML = "";
 
     matches.slice(0, 5).forEach(player => {
@@ -164,7 +164,7 @@ searchInput.addEventListener("input", function () {
         li.textContent = player.nick;
 
         li.addEventListener("click", () => {
-            autocompleteList.style.display = "none";
+            autocompleteList.classList.remove("show");
             searchInput.value = player.nick;
             openPlayerModal(player);
         });
@@ -176,6 +176,7 @@ searchInput.addEventListener("input", function () {
 // Cerrar autocompletado al hacer clic fuera
 document.addEventListener("click", function(e) {
     if (!searchInput.contains(e.target) && !autocompleteList.contains(e.target)) {
-        autocompleteList.style.display = "none";
+        autocompleteList.classList.remove("show");
     }
 });
+
