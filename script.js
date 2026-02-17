@@ -68,65 +68,12 @@ fetch("tiers_ranking.json")
 document.addEventListener("click", function(e) {
     if (e.target.classList.contains("nick-click")) {
         const player = JSON.parse(e.target.getAttribute("data-player"));
-
-        document.getElementById("modalNick").textContent = player.nick;
-        document.getElementById("modalRegion").textContent = "Región: " + player.region;
-        document.getElementById("modalScore").textContent = "Score: " + player.score;
-        document.getElementById("modalPosition").textContent = "Posición: " + player.position;
-
-        const ranksDiv = document.getElementById("modalRanks");
-        ranksDiv.innerHTML = `
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 6px; font-weight: 700;">
-                <span>Melee</span>
-                <span>Weapons</span>
-                <span>Mixed</span>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
-                <span class="rank-cell ${player.meleeRank}">${player.meleeRank}</span>
-                <span class="rank-cell ${player.weaponsRank}">${player.weaponsRank}</span>
-                <span class="rank-cell ${player.mixedRank}">${player.mixedRank}</span>
-            </div>
-        `;
-
-        document.getElementById("playerModal").style.display = "block";
+        openPlayerModal(player);
     }
 });
 
-/* Cerrar popup */
-document.querySelector(".close-btn").onclick = function() {
-    document.getElementById("playerModal").style.display = "none";
-};
-
-window.onclick = function(e) {
-    if (e.target === document.getElementById("playerModal")) {
-        document.getElementById("playerModal").style.display = "none";
-    }
-};
-
-
-// --- BUSCADOR ---
-document.getElementById("searchBtn").addEventListener("click", function() {
-    const input = document.getElementById("searchInput").value.trim();
-    const resultDiv = document.getElementById("searchResult");
-
-    if (input === "") {
-        resultDiv.style.display = "block";
-        resultDiv.textContent = "Ingresá un nombre para buscar.";
-        return;
-    }
-
-    const player = globalPlayers.find(p => p.nick.toLowerCase() === input.toLowerCase());
-
-    if (!player) {
-        resultDiv.style.display = "block";
-        resultDiv.textContent = "No se encontró al jugador.";
-        return;
-    }
-
-    // Si existe, limpiamos mensaje y abrimos popup
-    resultDiv.style.display = "none";
-
+/* Función para abrir modal */
+function openPlayerModal(player) {
     document.getElementById("modalNick").textContent = player.nick;
     document.getElementById("modalRegion").textContent = "Región: " + player.region;
     document.getElementById("modalScore").textContent = "Score: " + player.score;
@@ -148,4 +95,80 @@ document.getElementById("searchBtn").addEventListener("click", function() {
     `;
 
     document.getElementById("playerModal").style.display = "block";
+}
+
+/* Cerrar popup */
+document.querySelector(".close-btn").onclick = function() {
+    document.getElementById("playerModal").style.display = "none";
+};
+
+window.onclick = function(e) {
+    if (e.target === document.getElementById("playerModal")) {
+        document.getElementById("playerModal").style.display = "none";
+    }
+};
+
+
+// --- BUSCADOR (BOTÓN) ---
+document.getElementById("searchBtn").addEventListener("click", function() {
+    const input = document.getElementById("searchInput").value.trim();
+    const resultDiv = document.getElementById("searchResult");
+
+    if (input === "") {
+        resultDiv.style.display = "block";
+        resultDiv.textContent = "Ingresá un nombre para buscar.";
+        return;
+    }
+
+    const player = globalPlayers.find(p => p.nick.toLowerCase() === input.toLowerCase());
+
+    if (!player) {
+        resultDiv.style.display = "block";
+        resultDiv.textContent = "No se encontró al jugador.";
+        return;
+    }
+
+    resultDiv.style.display = "none";
+    openPlayerModal(player);
+});
+
+
+// --- BÚSQUEDA INSTANTÁNEA + AUTOCOMPLETADO ---
+const searchInput = document.getElementById("searchInput");
+const autocompleteList = document.getElementById("autocompleteList");
+
+searchInput.addEventListener("input", function () {
+    const text = searchInput.value.toLowerCase().trim();
+
+    if (text === "") {
+        autocompleteList.style.display = "none";
+        autocompleteList.innerHTML = "";
+        return;
+    }
+
+    const matches = globalPlayers.filter(p =>
+        p.nick.toLowerCase().includes(text)
+    );
+
+    if (matches.length === 0) {
+        autocompleteList.style.display = "block";
+        autocompleteList.innerHTML = `<li>No se encontró</li>`;
+        return;
+    }
+
+    autocompleteList.style.display = "block";
+    autocompleteList.innerHTML = "";
+
+    matches.slice(0, 5).forEach(player => {
+        const li = document.createElement("li");
+        li.textContent = player.nick;
+
+        li.addEventListener("click", () => {
+            autocompleteList.style.display = "none";
+            searchInput.value = player.nick;
+            openPlayerModal(player);
+        });
+
+        autocompleteList.appendChild(li);
+    });
 });
