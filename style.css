@@ -345,15 +345,17 @@ tr:hover {
 }
 
 #searchInput {
-    padding: 10px 14px 10px 34px;
+    padding: 10px 14px 10px 38px; /* espacio para la lupa */
     border-radius: 8px;
     border: 1px solid var(--border-soft);
-    background: #050814;
+    background: #050814 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='%2300aaff' viewBox='0 0 24 24'><path d='M10 2a8 8 0 015.292 13.708l4 4a1 1 0 01-1.414 1.414l-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z'/></svg>") no-repeat 12px center;
+    background-size: 18px;
     color: white;
     width: 230px;
     transition: all 0.22s ease;
     font-size: 14px;
 }
+
 
 #searchInput::placeholder {
     color: #6b7280;
@@ -366,16 +368,6 @@ tr:hover {
         0 0 0 1px var(--accent-soft),
         0 0 14px rgba(0,170,255,0.4);
     background: #070b18;
-}
-
-/* Icono de lupa */
-#searchContainer::before {
-    content: "🔍";
-    position: absolute;
-    left: calc(50% - 125px);
-    font-size: 14px;
-    color: #6b7280;
-    pointer-events: none;
 }
 
 #searchBtn {
