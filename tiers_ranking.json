@@ -5,9 +5,9 @@
         "region": "SA",
         "meleeRank": "LT3",
         "weaponsRank": "LT3",
-        "mixedRank": "LT3",
-        "score": 30,
-        "lastTestDate": "2026-02-15T16:25:47.070Z",
+        "mixedRank": "HT3",
+        "score": 35,
+        "lastTestDate": "2026-02-23T17:48:50.280Z",
         "testerId": "790702870286696468",
         "position": 1
     },
@@ -43,7 +43,7 @@
         "weaponsRank": "LT4",
         "mixedRank": "LT3",
         "score": 23,
-        "lastTestDate": "2026-02-23T16:57:53.172Z",
+        "lastTestDate": "2026-02-23T17:17:55.362Z",
         "testerId": "790702870286696468",
         "position": 4
     },
