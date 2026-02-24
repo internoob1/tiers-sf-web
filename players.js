@@ -6,6 +6,7 @@ if (!discordId) {
     document.getElementById("profileContent").innerHTML = `
         <h2 style="color:#ff5555;">Error: No se proporcionó un ID válido.</h2>
     `;
+    throw new Error("No ID provided");
 }
 
 // Cargar datos
@@ -15,8 +16,9 @@ Promise.all([
 ])
 .then(([playersData, rankingData]) => {
 
-    const player = playersData.find(p => p.discordId === discordId);
-    const rankingInfo = rankingData.find(p => p.discordId === discordId);
+    // playersData es un objeto: { "id": { ... } }
+    const player = playersData[discordId];
+    const rankingInfo = rankingData.find(p => p.id === discordId);
 
     if (!player || !rankingInfo) {
         document.getElementById("profileContent").innerHTML = `
@@ -25,8 +27,8 @@ Promise.all([
         return;
     }
 
-    // Avatar de Discord
-    const avatarUrl = `https://cdn.discordapp.com/avatars/${discordId}/${player.avatar}.png?size=256`;
+    // Avatar de Discord (si tenés hash en el futuro, se usa; si no, no rompe)
+    const avatarUrl = `https://cdn.discordapp.com/avatars/${discordId}/${player.avatar || ""}.png?size=256`;
 
     // Renderizar perfil
     document.getElementById("profileContent").innerHTML = `
@@ -35,6 +37,7 @@ Promise.all([
             <!-- Avatar -->
             <div>
                 <img src="${avatarUrl}" 
+                     onerror="this.style.display='none';"
                      style="width:160px; height:160px; border-radius:12px; box-shadow:0 0 18px rgba(0,170,255,0.4);" />
             </div>
 
@@ -64,14 +67,14 @@ Promise.all([
         <hr style="margin:25px auto; width:60%; border-color:#1f2a3a;">
 
         <!-- Info extra -->
-        <p style="color:#bfc7d5;">Tester: <b>${player.tester || "N/A"}</b></p>
+        <p style="color:#bfc7d5;">Tester: <b>${player.testerId || "N/A"}</b></p>
         <p style="color:#bfc7d5;">Último test: <b>${player.lastTestDate || "N/A"}</b></p>
 
-        <button onclick="window.location.href='compare.html?id=${discordId}'"
+        <button onclick="window.location.href='index.html'"
                 style="margin-top:20px; padding:10px 20px; border:none; border-radius:8px;
                        background:linear-gradient(135deg,#0284c7,#00aaff); color:white;
                        font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(0,170,255,0.4);">
-            Comparar con otro jugador
+            Volver al ranking
         </button>
     `;
 
@@ -83,4 +86,7 @@ Promise.all([
 })
 .catch(err => {
     console.error("Error cargando datos:", err);
+    document.getElementById("profileContent").innerHTML = `
+        <h2 style="color:#ff5555;">Error cargando datos del jugador.</h2>
+    `;
 });
