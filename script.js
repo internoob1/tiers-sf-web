@@ -23,10 +23,17 @@ fetch("tiers_ranking.json")
                     <span class="cell-box pos-${player.position}">${player.position}</span>
                 </td>
 
- <td data-label="Nick">
-    <a class="cell-box nick-click" href="player.html?id=${player.discordId}">
+<td data-label="Nick">
+    <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
         ${player.nick}
-    </a>
+    </span>
+
+    <!-- Icono perfil completo -->
+    <span 
+        style="margin-left:8px; cursor:pointer; font-size:18px;" 
+        onclick="window.location.href='player.html?id=${player.discordId}'">
+        👤
+    </span>
 </td>
 
 
@@ -94,6 +101,33 @@ function openPlayerModal(player) {
             <span class="rank-cell ${player.mixedRank}">${player.mixedRank}</span>
         </div>
     `;
+
+    // Botón para ver perfil completo
+const modalContent = document.querySelector(".modal-content");
+
+let existingBtn = document.getElementById("fullProfileBtn");
+if (existingBtn) existingBtn.remove();
+
+const btn = document.createElement("button");
+btn.id = "fullProfileBtn";
+btn.textContent = "Ver perfil completo";
+btn.style = `
+    margin-top: 18px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0284c7, #00aaff);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0,170,255,0.4);
+`;
+
+btn.onclick = () => {
+    window.location.href = \`player.html?id=${player.discordId}\`;
+};
+
+modalContent.appendChild(btn);
 
     document.getElementById("playerModal").style.display = "block";
 }
