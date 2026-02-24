@@ -23,11 +23,12 @@ fetch("tiers_ranking.json")
                     <span class="cell-box pos-${player.position}">${player.position}</span>
                 </td>
 
-                <td data-label="Nick">
-                    <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
-                        ${player.nick}
-                    </span>
-                </td>
+ <td data-label="Nick">
+    <a class="cell-box nick-click" href="player.html?id=${player.discordId}">
+        ${player.nick}
+    </a>
+</td>
+
 
                 <td data-label="Región">
                     <span class="cell-box">${player.region}</span>
