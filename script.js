@@ -4,7 +4,7 @@ let globalPlayers = [];
 fetch("tiers_ranking.json")
     .then(response => response.json())
     .then(data => {
-        globalPlayers = data; // Guardamos todos los jugadores
+        globalPlayers = data; // Guardamos todos los jugadores (array)
 
         // Ordenar por score (mayor a menor)
         data.sort((a, b) => b.score - a.score);
@@ -23,19 +23,16 @@ fetch("tiers_ranking.json")
                     <span class="cell-box pos-${player.position}">${player.position}</span>
                 </td>
 
-<td data-label="Nick">
-    <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
-        ${player.nick}
-    </span>
-
-    <!-- Icono perfil completo -->
-    <span 
-        style="margin-left:8px; cursor:pointer; font-size:18px;" 
-        onclick="window.location.href='player.html?id=${player.discordId}'">
-        👤
-    </span>
-</td>
-
+                <td data-label="Nick">
+                    <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
+                        ${player.nick}
+                    </span>
+                    <span 
+                        style="margin-left:8px; cursor:pointer; font-size:18px;" 
+                        onclick="window.location.href='player.html?id=${player.id}'">
+                        👤
+                    </span>
+                </td>
 
                 <td data-label="Región">
                     <span class="cell-box">${player.region}</span>
@@ -103,31 +100,31 @@ function openPlayerModal(player) {
     `;
 
     // Botón para ver perfil completo
-const modalContent = document.querySelector(".modal-content");
+    const modalContent = document.querySelector(".modal-content");
 
-let existingBtn = document.getElementById("fullProfileBtn");
-if (existingBtn) existingBtn.remove();
+    let existingBtn = document.getElementById("fullProfileBtn");
+    if (existingBtn) existingBtn.remove();
 
-const btn = document.createElement("button");
-btn.id = "fullProfileBtn";
-btn.textContent = "Ver perfil completo";
-btn.style = `
-    margin-top: 18px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #0284c7, #00aaff);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 0 12px rgba(0,170,255,0.4);
-`;
+    const btn = document.createElement("button");
+    btn.id = "fullProfileBtn";
+    btn.textContent = "Ver perfil completo";
+    btn.style = `
+        margin-top: 18px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #0284c7, #00aaff);
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 0 12px rgba(0,170,255,0.4);
+    `;
 
-btn.onclick = () => {
-    window.location.href = \`player.html?id=${player.discordId}\`;
-};
+    btn.onclick = () => {
+        window.location.href = `player.html?id=${player.id}`;
+    };
 
-modalContent.appendChild(btn);
+    modalContent.appendChild(btn);
 
     document.getElementById("playerModal").style.display = "block";
 }
@@ -164,7 +161,7 @@ document.getElementById("searchBtn").addEventListener("click", function() {
     }
 
     resultDiv.style.display = "none";
-    window.location.href = `player.html?id=${player.discordId}`;
+    openPlayerModal(player);
 });
 
 
@@ -199,9 +196,10 @@ searchInput.addEventListener("input", function () {
         li.textContent = player.nick;
 
         li.addEventListener("click", () => {
-              window.location.href = `player.html?id=${player.discordId}`;
+            autocompleteList.classList.remove("show");
+            searchInput.value = player.nick;
+            openPlayerModal(player);
         });
-
 
         autocompleteList.appendChild(li);
     });
@@ -213,4 +211,3 @@ document.addEventListener("click", function(e) {
         autocompleteList.classList.remove("show");
     }
 });
-
