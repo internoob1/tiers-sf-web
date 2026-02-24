@@ -130,7 +130,7 @@ document.getElementById("searchBtn").addEventListener("click", function() {
     }
 
     resultDiv.style.display = "none";
-    openPlayerModal(player);
+    window.location.href = `player.html?id=${player.discordId}`;
 });
 
 
@@ -165,10 +165,9 @@ searchInput.addEventListener("input", function () {
         li.textContent = player.nick;
 
         li.addEventListener("click", () => {
-            autocompleteList.classList.remove("show");
-            searchInput.value = player.nick;
-            openPlayerModal(player);
+              window.location.href = `player.html?id=${player.discordId}`;
         });
+
 
         autocompleteList.appendChild(li);
     });
