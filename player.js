@@ -9,6 +9,19 @@ if (!discordId) {
     throw new Error("No ID provided");
 }
 
+// Función para formatear fecha
+function formatDate(dateString) {
+    if (!dateString) return "N/A";
+    const date = new Date(dateString);
+    return date.toLocaleString("es-AR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+}
+
 // Cargar datos
 Promise.all([
     fetch("tiers_players.json").then(r => r.json()),
@@ -27,8 +40,12 @@ Promise.all([
         return;
     }
 
-    // Avatar de Discord (si tenés hash en el futuro, se usa; si no, no rompe)
-    const avatarUrl = `https://cdn.discordapp.com/avatars/${discordId}/${player.avatar || ""}.png?size=256`;
+    // Avatar por defecto de Discord
+    const defaultAvatarIndex = Number(discordId) % 5;
+    const avatarUrl = `https://cdn.discordapp.com/embed/avatars/${defaultAvatarIndex}.png`;
+
+    // Obtener nick del tester
+    const testerNick = playersData[player.testerId]?.nick || "N/A";
 
     // Renderizar perfil
     document.getElementById("profileContent").innerHTML = `
@@ -37,7 +54,6 @@ Promise.all([
             <!-- Avatar -->
             <div>
                 <img src="${avatarUrl}" 
-                     onerror="this.style.display='none';"
                      style="width:160px; height:160px; border-radius:12px; box-shadow:0 0 18px rgba(0,170,255,0.4);" />
             </div>
 
@@ -67,8 +83,8 @@ Promise.all([
         <hr style="margin:25px auto; width:60%; border-color:#1f2a3a;">
 
         <!-- Info extra -->
-        <p style="color:#bfc7d5;">Tester: <b>${player.testerId || "N/A"}</b></p>
-        <p style="color:#bfc7d5;">Último test: <b>${player.lastTestDate || "N/A"}</b></p>
+        <p style="color:#bfc7d5;">Tester: <b>${testerNick}</b></p>
+        <p style="color:#bfc7d5;">Último test: <b>${formatDate(player.lastTestDate)}</b></p>
 
         <button onclick="window.location.href='index.html'"
                 style="margin-top:20px; padding:10px 20px; border:none; border-radius:8px;
