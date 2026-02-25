@@ -23,16 +23,41 @@ fetch("tiers_ranking.json")
                     <span class="cell-box pos-${player.position}">${player.position}</span>
                 </td>
 
-                <td data-label="Nick">
-                    <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
-                        ${player.nick}
-                    </span>
-                    <span 
-                        style="margin-left:8px; cursor:pointer; font-size:18px;" 
-                        onclick="window.location.href='player.html?id=${player.id}'">
-                        👤
-                    </span>
-                </td>
+<td data-label="Nick">
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+        <!-- Avatar -->
+        <img 
+            src="${
+                player.avatar 
+                ? `https://cdn.discordapp.com/avatars/${player.id}/${player.avatar}.png?size=64`
+                : `https://cdn.discordapp.com/embed/avatars/${Number(player.id) % 5}.png`
+            }"
+            style="
+                width:32px;
+                height:32px;
+                border-radius:50%;
+                object-fit:cover;
+                box-shadow:0 0 6px rgba(0,0,0,0.4);
+            "
+        />
+
+        <!-- Nick clickeable -->
+        <span class="cell-box nick-click" data-player='${JSON.stringify(player)}'>
+            ${player.nick}
+        </span>
+
+        <!-- Icono perfil -->
+        <span 
+            style="margin-left:6px; cursor:pointer; font-size:18px;" 
+            onclick="window.location.href='player.html?id=${player.id}'">
+            👤
+        </span>
+
+    </div>
+
+</td>
 
                 <td data-label="Región">
                     <span class="cell-box">${player.region}</span>
