@@ -2,6 +2,10 @@ const params = new URLSearchParams(window.location.search);
 const id1 = params.get("id1");
 const id2 = params.get("id2");
 
+if (!location.hostname.includes("internoob1.github.io")) {
+    location.href = `https://internoob1.github.io${location.pathname}${location.search}`;
+}
+
 if (!id1 || !id2) {
     document.getElementById("compareContainer").innerHTML =
         "<h2 style='color:#ff5555;'>Faltan jugadores para comparar.</h2>";
