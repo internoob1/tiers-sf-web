@@ -174,7 +174,7 @@ playersCache
       const params = new URLSearchParams(window.location.search);
       const playerA = params.get("id1");
 
-      window.location.href = `/compare?id1=${playerA}&id2=${player.id}`;
+      window.location.href = `compare.html?id1=${playerA}&id2=${player.id}`;
     });
 
     resultsContainer.appendChild(div);
