@@ -7,8 +7,9 @@
         "weaponsRank": "LT3",
         "mixedRank": "HT3",
         "score": 35,
-        "lastTestDate": "2026-02-25T00:48:56.536Z",
+        "lastTestDate": "2026-02-23T17:48:50.280Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 1
     },
     {
@@ -19,8 +20,9 @@
         "weaponsRank": "LT3",
         "mixedRank": "LT3",
         "score": 30,
-        "lastTestDate": "2026-02-25T00:51:55.516Z",
+        "lastTestDate": "2026-02-16T17:33:07.932Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 2
     },
     {
@@ -31,8 +33,9 @@
         "weaponsRank": "LT3",
         "mixedRank": "HT4",
         "score": 25,
-        "lastTestDate": "2026-02-25T00:49:17.932Z",
+        "lastTestDate": "2026-02-17T17:56:01.755Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 3
     },
     {
@@ -43,8 +46,9 @@
         "weaponsRank": "LT4",
         "mixedRank": "LT3",
         "score": 23,
-        "lastTestDate": "2026-02-25T00:49:30.441Z",
+        "lastTestDate": "2026-02-23T17:17:55.362Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 4
     },
     {
@@ -55,8 +59,9 @@
         "weaponsRank": "HT5",
         "mixedRank": "LT3",
         "score": 17,
-        "lastTestDate": "2026-02-25T00:49:39.644Z",
+        "lastTestDate": "2026-02-22T16:41:17.021Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 5
     },
     {
@@ -67,8 +72,9 @@
         "weaponsRank": "Unranked",
         "mixedRank": "HT5",
         "score": 12,
-        "lastTestDate": "2026-02-25T00:49:49.297Z",
+        "lastTestDate": "2026-02-21T16:15:54.985Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 6
     },
     {
@@ -79,8 +85,9 @@
         "weaponsRank": "LT5",
         "mixedRank": "LT5",
         "score": 3,
-        "lastTestDate": "2026-02-25T00:50:00.177Z",
+        "lastTestDate": "2026-02-21T15:03:36.273Z",
         "testerId": "790702870286696468",
+        "avatar": null,
         "position": 7
     },
     {
@@ -93,6 +100,7 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
+        "avatar": null,
         "position": 8
     },
     {
@@ -105,6 +113,7 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
+        "avatar": null,
         "position": 9
     },
     {
@@ -117,6 +126,7 @@
         "score": 0,
         "lastTestDate": null,
         "testerId": null,
+        "avatar": null,
         "position": 10
     }
 ]
