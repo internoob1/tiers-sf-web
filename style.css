@@ -649,3 +649,12 @@ tr:hover {
   transform: scale(1.05);
   transition: 0.25s;
 }
+
+.selector-box {
+  animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
