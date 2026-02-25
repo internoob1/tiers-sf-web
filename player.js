@@ -76,11 +76,66 @@ Promise.all([
         <!-- Rangos -->
         <h3 style="color:var(--accent); letter-spacing:1px;">RANGOS</h3>
 
-        <div style="display:flex; justify-content:center; gap:20px; margin-top:10px; flex-wrap:wrap;">
-            <div class="rank-cell ${player.meleeRank}">${player.meleeRank}</div>
-            <div class="rank-cell ${player.weaponsRank}">${player.weaponsRank}</div>
-            <div class="rank-cell ${player.mixedRank}">${player.mixedRank}</div>
+<div style="display:flex; justify-content:center; gap:25px; margin-top:10px; flex-wrap:wrap;">
+
+    <!-- Tarjeta MELEE -->
+    <div style="
+        background:#0b1019;
+        border:1px solid var(--border-soft);
+        border-radius:12px;
+        padding:14px 18px;
+        width:120px;
+        text-align:center;
+        box-shadow:0 0 12px rgba(0,170,255,0.15);
+        transition:0.25s;
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0 18px rgba(0,170,255,0.35)';"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 12px rgba(0,170,255,0.15)';">
+
+        <p style="margin:0; font-size:13px; color:#bfc7d5; letter-spacing:1px;">MELEE</p>
+        <div class="rank-cell ${player.meleeRank}" style="margin-top:6px;">
+            ${player.meleeRank}
         </div>
+    </div>
+
+    <!-- Tarjeta WEAPONS -->
+    <div style="
+        background:#0b1019;
+        border:1px solid var(--border-soft);
+        border-radius:12px;
+        padding:14px 18px;
+        width:120px;
+        text-align:center;
+        box-shadow:0 0 12px rgba(0,170,255,0.15);
+        transition:0.25s;
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0 18px rgba(0,170,255,0.35)';"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 12px rgba(0,170,255,0.15)';">
+
+        <p style="margin:0; font-size:13px; color:#bfc7d5; letter-spacing:1px;">WEAPONS</p>
+        <div class="rank-cell ${player.weaponsRank}" style="margin-top:6px;">
+            ${player.weaponsRank}
+        </div>
+    </div>
+
+    <!-- Tarjeta MIXED -->
+    <div style="
+        background:#0b1019;
+        border:1px solid var(--border-soft);
+        border-radius:12px;
+        padding:14px 18px;
+        width:120px;
+        text-align:center;
+        box-shadow:0 0 12px rgba(0,170,255,0.15);
+        transition:0.25s;
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0 18px rgba(0,170,255,0.35)';"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 12px rgba(0,170,255,0.15)';">
+
+        <p style="margin:0; font-size:13px; color:#bfc7d5; letter-spacing:1px;">MIXED</p>
+        <div class="rank-cell ${player.mixedRank}" style="margin-top:6px;">
+            ${player.mixedRank}
+        </div>
+    </div>
+
+</div>
 
         <hr style="margin:25px auto; width:60%; border-color:#1f2a3a;">
 
