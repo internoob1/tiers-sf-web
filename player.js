@@ -22,6 +22,25 @@ function formatDate(dateString) {
     });
 }
 
+// ✅ PEGAR ACÁ
+function comparePlayer(id1) {
+    fetch("tiers_ranking.json")
+        .then(r => r.json())
+        .then(players => {
+            const nick = prompt("Escribí el nick del jugador a comparar:");
+            if (!nick) return;
+
+            const rival = players.find(p => p.nick.toLowerCase() === nick.toLowerCase());
+            if (!rival) {
+                alert("Jugador no encontrado.");
+                return;
+            }
+
+            window.location.href = `compare.html?id1=${id1}&id2=${rival.id}`;
+        });
+}
+
+
 // Cargar datos
 Promise.all([
     fetch("tiers_players.json").then(r => r.json()),
@@ -148,7 +167,12 @@ Promise.all([
                        background:linear-gradient(135deg,#0284c7,#00aaff); color:white;
                        font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(0,170,255,0.4);">
             Volver al ranking
-        </button>
+       <button onclick="comparePlayer('${player.id}')"
+        style="margin-top:12px; padding:10px 20px; border:none; border-radius:8px;
+               background:linear-gradient(135deg,#7c3aed,#9333ea); color:white;
+               font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(147,51,234,0.4);">
+    Comparar con otro jugador
+</button>
     `;
 
     // Animación suave
