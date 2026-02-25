@@ -182,10 +182,7 @@ Promise.all([
 
     `;
 
-    // Animación suave
-    setTimeout(() => {
-        document.getElementById("profileContent").style.opacity = 1;
-    }, 50);
+document.getElementById("profileContent").style.opacity = 1;
 
 })
 .catch(err => {
