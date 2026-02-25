@@ -144,4 +144,54 @@ function openRivalSelector() {
     window.location.href = `/compare?id1=${playerA}&id2=${newRivalId}`;
 }
 
+const overlay = document.getElementById("rivalSelectorOverlay");
+const searchInput = document.getElementById("rivalSearchInput");
+const resultsContainer = document.getElementById("rivalResults");
+
+changeRivalBtn.addEventListener("click", () => {
+  overlay.classList.remove("hidden");
+  searchInput.value = "";
+  resultsContainer.innerHTML = "";
+  searchInput.focus();
+});
+
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    overlay.classList.add("hidden");
+  }
+});
+
+let playersCache = [];
+
+fetch("tiers_ranking.json")
+  .then(res => res.json())
+  .then(data => {
+    playersCache = data;
+  });
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  resultsContainer.innerHTML = "";
+
+  if (!query) return;
+
+  playersCache
+    .filter(p => p.nick.toLowerCase().includes(query))
+    .slice(0, 10)
+    .forEach(player => {
+      const div = document.createElement("div");
+      div.className = "result-item";
+      div.textContent = `${player.nick} (${player.region})`;
+
+      div.addEventListener("click", () => {
+        const params = new URLSearchParams(window.location.search);
+        const playerA = params.get("id1");
+
+        window.location.href = `/compare?id1=${playerA}&id2=${player.discordId}`;
+      });
+
+      resultsContainer.appendChild(div);
+    });
+});
+
 
