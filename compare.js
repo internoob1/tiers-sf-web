@@ -166,12 +166,13 @@ searchInput.addEventListener("input", () => {
       div.className = "result-item";
       div.textContent = `${player.nick} (${player.region})`;
 
-      div.addEventListener("click", () => {
-        const params = new URLSearchParams(window.location.search);
-        const playerA = params.get("id1");
+div.addEventListener("click", () => {
+  const params = new URLSearchParams(window.location.search);
+  const playerA = params.get("id1");
 
-        window.location.href = `/compare?id1=${playerA}&id2=${player.discordId}`;
-      });
+  window.location.href = `/compare?id1=${playerA}&id2=${player.id}`;
+});
+
 
       resultsContainer.appendChild(div);
     });
