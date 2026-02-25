@@ -91,6 +91,17 @@ function renderPlayer(containerId, player, rival) {
             </button>
         </div>
     `;
+
+    // 🔥 ANIMACIÓN TIERS SF — ESTO ES LO NUEVO 🔥
+    const card = container.firstElementChild;
+    card.style.opacity = 0;
+    card.style.transform = "scale(0.95)";
+    setTimeout(() => {
+        card.style.transition = "0.25s ease";
+        card.style.opacity = 1;
+        card.style.transform = "scale(1)";
+    }, 10);
+}
     // Animación fade-in TIERS SF
 const card = container.firstElementChild;
 card.style.opacity = 0;
