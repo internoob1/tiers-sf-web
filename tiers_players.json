@@ -5,7 +5,7 @@
         "meleeRank": "LT3",
         "weaponsRank": "LT3",
         "mixedRank": "HT3",
-        "lastTestDate": "2026-02-25T00:28:16.988Z",
+        "lastTestDate": "2026-02-25T00:48:56.536Z",
         "testerId": "790702870286696468",
         "score": 35,
         "avatar": "601d17dbe8c4414aee639e3f032e4c6e"
@@ -48,7 +48,8 @@
         "mixedRank": "LT3",
         "lastTestDate": "2026-02-16T17:33:07.932Z",
         "testerId": "790702870286696468",
-        "score": 30
+        "score": 30,
+        "avatar": "c845ae5d97fb3def728d0695893374fa"
     },
     "774885628730408960": {
         "nick": "Luck",
