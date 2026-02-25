@@ -641,3 +641,11 @@ tr:hover {
   from { transform: scale(0.85); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+.winner {
+  box-shadow:
+    0 0 12px rgba(0,170,255,0.6),
+    0 0 24px rgba(0,170,255,0.4);
+  transform: scale(1.05);
+  transition: 0.25s;
+}
