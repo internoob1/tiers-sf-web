@@ -22,23 +22,58 @@ function formatDate(dateString) {
     });
 }
 
-// ✅ PEGAR ACÁ
 function comparePlayer(id1) {
     fetch("tiers_ranking.json")
         .then(r => r.json())
         .then(players => {
-            const nick = prompt("Escribí el nick del jugador a comparar:");
-            if (!nick) return;
 
-            const rival = players.find(p => p.nick.toLowerCase() === nick.toLowerCase());
-            if (!rival) {
-                alert("Jugador no encontrado.");
-                return;
-            }
+            const overlay = document.createElement("div");
+            overlay.id = "compareOverlay";
+            overlay.innerHTML = `
+                <div class="compare-modal">
+                    <h3>Comparar con...</h3>
+                    <input type="text" id="compareInput" placeholder="Buscar jugador..." />
+                    <div id="compareResults"></div>
+                    <button class="close-btn">Cancelar</button>
+                </div>
+            `;
 
-            window.location.href = `compare.html?id1=${id1}&id2=${rival.id}`;
+            document.body.appendChild(overlay);
+
+            const input = overlay.querySelector("#compareInput");
+            const results = overlay.querySelector("#compareResults");
+
+            input.addEventListener("input", () => {
+                const text = input.value.toLowerCase();
+                results.innerHTML = "";
+
+                if (!text) return;
+
+                players
+                    .filter(p => p.nick.toLowerCase().includes(text) && p.id !== id1)
+                    .slice(0, 6)
+                    .forEach(p => {
+                        const avatar = p.avatar
+                            ? `https://cdn.discordapp.com/avatars/${p.id}/${p.avatar}.png?size=64`
+                            : `https://cdn.discordapp.com/embed/avatars/${Number(p.id) % 5}.png`;
+
+                        const card = document.createElement("div");
+                        card.className = "compare-result";
+                        card.innerHTML = `
+                            <img src="${avatar}">
+                            <span>${p.nick}</span>
+                        `;
+                        card.onclick = () => {
+                            window.location.href = `compare.html?id1=${id1}&id2=${p.id}`;
+                        };
+                        results.appendChild(card);
+                    });
+            });
+
+            overlay.querySelector(".close-btn").onclick = () => overlay.remove();
         });
 }
+
 
 
 // Cargar datos
