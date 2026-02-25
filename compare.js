@@ -125,4 +125,23 @@ function rankValue(rank) {
     return values[rank] ?? 0;
 }
 
+const changeRivalBtn = document.getElementById("changeRivalBtn");
+
+changeRivalBtn.addEventListener("click", () => {
+    openRivalSelector();
+});
+
+function openRivalSelector() {
+    const newRivalId = prompt("Ingresá el ID del nuevo rival:");
+
+    if (!newRivalId) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const playerA = params.get("id1");
+
+    if (!playerA) return;
+
+    window.location.href = `/compare?id1=${playerA}&id2=${newRivalId}`;
+}
+
 
