@@ -127,23 +127,6 @@ function rankValue(rank) {
 
 const changeRivalBtn = document.getElementById("changeRivalBtn");
 
-changeRivalBtn.addEventListener("click", () => {
-    openRivalSelector();
-});
-
-function openRivalSelector() {
-    const newRivalId = prompt("Ingresá el ID del nuevo rival:");
-
-    if (!newRivalId) return;
-
-    const params = new URLSearchParams(window.location.search);
-    const playerA = params.get("id1");
-
-    if (!playerA) return;
-
-    window.location.href = `/compare?id1=${playerA}&id2=${newRivalId}`;
-}
-
 const overlay = document.getElementById("rivalSelectorOverlay");
 const searchInput = document.getElementById("rivalSearchInput");
 const resultsContainer = document.getElementById("rivalResults");
