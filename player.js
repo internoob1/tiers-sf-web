@@ -42,7 +42,9 @@ Promise.all([
 
     // Avatar por defecto de Discord
     const defaultAvatarIndex = Number(discordId) % 5;
-    const avatarUrl = `https://cdn.discordapp.com/embed/avatars/${defaultAvatarIndex}.png`;
+    const avatarUrl = player.avatar
+    ? `https://cdn.discordapp.com/avatars/${discordId}/${player.avatar}.png?size=256`
+    : `https://cdn.discordapp.com/embed/avatars/${defaultAvatarIndex}.png`;
 
     // Obtener nick del tester
     const testerNick = playersData[player.testerId]?.nick || "N/A";
