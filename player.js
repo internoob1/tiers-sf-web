@@ -162,17 +162,24 @@ Promise.all([
         <p style="color:#bfc7d5;">Tester: <b>${testerNick}</b></p>
         <p style="color:#bfc7d5;">Último test: <b>${formatDate(player.lastTestDate)}</b></p>
 
-        <button onclick="window.location.href='index.html'"
-                style="margin-top:20px; padding:10px 20px; border:none; border-radius:8px;
-                       background:linear-gradient(135deg,#0284c7,#00aaff); color:white;
-                       font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(0,170,255,0.4);">
-            Volver al ranking
-       <button onclick="comparePlayer('${player.id}')"
-        style="margin-top:12px; padding:10px 20px; border:none; border-radius:8px;
-               background:linear-gradient(135deg,#7c3aed,#9333ea); color:white;
-               font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(147,51,234,0.4);">
-    Comparar con otro jugador
-</button>
+<div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+
+    <button onclick="window.location.href='index.html'"
+            style="padding:10px 20px; border:none; border-radius:8px;
+                   background:linear-gradient(135deg,#0284c7,#00aaff); color:white;
+                   font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(0,170,255,0.4);">
+        Volver al ranking
+    </button>
+
+    <button onclick="comparePlayer('${discordId}')"
+            style="padding:10px 20px; border:none; border-radius:8px;
+                   background:linear-gradient(135deg,#7c3aed,#9333ea); color:white;
+                   font-weight:600; cursor:pointer; box-shadow:0 0 12px rgba(147,51,234,0.4);">
+        Comparar con otro jugador
+    </button>
+
+</div>
+
     `;
 
     // Animación suave
