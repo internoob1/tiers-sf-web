@@ -94,7 +94,14 @@ function rankRow(label, rank, rivalRank) {
     return `
         <div style="margin:6px 0;">
             <span style="color:#bfc7d5;">${label}</span><br>
-            <span class="rank-cell ${rank}" style="${better ? 'box-shadow:0 0 12px rgba(0,170,255,0.6);' : ''}">
+            <span class="rank-cell ${rank}" style="${better ? `
+    box-shadow:
+        0 0 12px rgba(0,170,255,0.9),
+        0 0 24px rgba(0,170,255,0.7),
+        0 0 40px rgba(0,170,255,0.5);
+    transform: scale(1.08);
+    z-index: 2;
+` : ''}">
                 ${rank}
             </span>
         </div>
