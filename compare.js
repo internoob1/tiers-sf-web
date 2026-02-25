@@ -158,24 +158,23 @@ searchInput.addEventListener("input", () => {
 
   if (!query) return;
 
-  playersCache
-    .filter(p => p.nick.toLowerCase().includes(query))
-    .slice(0, 10)
-    .forEach(player => {
-      const div = document.createElement("div");
-      div.className = "result-item";
-      div.textContent = `${player.nick} (${player.region})`;
+playersCache
+  .filter(p => p.nick.toLowerCase().includes(query))
+  .slice(0, 10)
+  .forEach(player => {
+    const div = document.createElement("div");
+    div.className = "result-item";
+    div.textContent = `${player.nick} (${player.region})`;
 
-div.addEventListener("click", () => {
-  const params = new URLSearchParams(window.location.search);
-  const playerA = params.get("id1");
+    div.addEventListener("click", () => {
+      const params = new URLSearchParams(window.location.search);
+      const playerA = params.get("id1");
 
-  window.location.href = `/compare?id1=${playerA}&id2=${player.id}`;
-});
-
-
-      resultsContainer.appendChild(div);
+      window.location.href = `/compare?id1=${playerA}&id2=${player.id}`;
     });
+
+    resultsContainer.appendChild(div);
+  });
 });
 
 
