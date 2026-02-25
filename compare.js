@@ -91,6 +91,15 @@ function renderPlayer(containerId, player, rival) {
             </button>
         </div>
     `;
+    // Animación fade-in TIERS SF
+const card = container.firstElementChild;
+card.style.opacity = 0;
+card.style.transform = "scale(0.95)";
+setTimeout(() => {
+  card.style.transition = "0.25s ease";
+  card.style.opacity = 1;
+  card.style.transform = "scale(1)";
+}, 10);
 }
 
 function rankRow(label, rank, rivalRank) {
@@ -163,12 +172,28 @@ searchInput.addEventListener("input", () => {
   if (!query) return;
 
 playersCache
-  .filter(p => p.nick.toLowerCase().includes(query))
+  .filter(p => 
+      p.nick.toLowerCase().includes(query) &&
+      p.id !== id1 // ← EXCLUIR jugador A
+  )
   .slice(0, 10)
   .forEach(player => {
     const div = document.createElement("div");
     div.className = "result-item";
-    div.textContent = `${player.nick} (${player.region})`;
+    div.innerHTML = `
+  <div style="display:flex; align-items:center; gap:10px;">
+    <img src="${
+      player.avatar
+        ? `https://cdn.discordapp.com/avatars/${player.id}/${player.avatar}.png?size=64`
+        : `https://cdn.discordapp.com/embed/avatars/${Number(player.id) % 5}.png`
+    }" style="width:32px; height:32px; border-radius:50%;">
+
+    <div>
+      <strong>${player.nick}</strong>
+      <div style="font-size:12px; color:#aaa;">${player.region}</div>
+    </div>
+  </div>
+`;
 
     div.addEventListener("click", () => {
       const params = new URLSearchParams(window.location.search);
@@ -181,4 +206,9 @@ playersCache
   });
 });
 
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    overlay.classList.add("hidden");
+  }
+});
 
