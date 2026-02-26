@@ -92,7 +92,7 @@ function renderPlayer(containerId, player, rival) {
         </div>
     `;
 
-    // 🔥 ANIMACIÓN TIERS SF — ESTO ES LO NUEVO 🔥
+    // 🔥 ANIMACIÓN TIERS SF — CORRECTA 🔥
     const card = container.firstElementChild;
     card.style.opacity = 0;
     card.style.transform = "scale(0.95)";
