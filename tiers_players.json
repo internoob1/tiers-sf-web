@@ -102,5 +102,16 @@
         "mixedRank": "Unranked",
         "lastTestDate": null,
         "testerId": null
+    },
+    "1346480865089290311": {
+        "nick": "No registrado",
+        "region": "Desconocida",
+        "meleeRank": "Unranked",
+        "weaponsRank": "Unranked",
+        "mixedRank": "Unranked",
+        "lastTestDate": null,
+        "testerId": null,
+        "score": 0,
+        "avatar": null
     }
 }
