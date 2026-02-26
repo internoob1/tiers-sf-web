@@ -160,7 +160,41 @@ function rankValue(rank) {
 // =========================
 // Selector de rival
 // =========================
-const changeRivalBtn = document.getElementById("changeRivalBtn");
+const changeA = document.getElementById("changeA");
+const changeB = document.getElementById("changeB");
+const newCompare = document.getElementById("newCompare");
+
+let selectorMode = null; 
+let tempNewA = null; // para selector doble
+
+// Cambiar jugador A
+changeA.addEventListener("click", () => {
+    selectorMode = "A";
+    overlay.classList.remove("hidden");
+    searchInput.value = "";
+    resultsContainer.innerHTML = "";
+    searchInput.focus();
+});
+
+// Cambiar jugador B
+changeB.addEventListener("click", () => {
+    selectorMode = "B";
+    overlay.classList.remove("hidden");
+    searchInput.value = "";
+    resultsContainer.innerHTML = "";
+    searchInput.focus();
+});
+
+// Nueva comparación (selector doble)
+newCompare.addEventListener("click", () => {
+    selectorMode = "NEW_A";
+    tempNewA = null;
+    overlay.classList.remove("hidden");
+    searchInput.value = "";
+    resultsContainer.innerHTML = "";
+    searchInput.focus();
+});
+
 const overlay = document.getElementById("rivalSelectorOverlay");
 const searchInput = document.getElementById("rivalSearchInput");
 const resultsContainer = document.getElementById("rivalResults");
@@ -217,9 +251,36 @@ searchInput.addEventListener("input", () => {
         </div>
       `;
 
-      div.addEventListener("click", () => {
+div.addEventListener("click", () => {
+
+    // Cambiar jugador A
+    if (selectorMode === "A") {
+        window.location.href = `compare.html?id1=${player.id}&id2=${id2}`;
+        return;
+    }
+
+    // Cambiar jugador B
+    if (selectorMode === "B") {
         window.location.href = `compare.html?id1=${id1}&id2=${player.id}`;
-      });
+        return;
+    }
+
+    // Nueva comparación — elegir jugador A
+    if (selectorMode === "NEW_A") {
+        tempNewA = player.id;
+        selectorMode = "NEW_B";
+        searchInput.value = "";
+        resultsContainer.innerHTML = "";
+        searchInput.placeholder = "Elegir jugador B...";
+        return;
+    }
+
+    // Nueva comparación — elegir jugador B
+    if (selectorMode === "NEW_B") {
+        window.location.href = `compare.html?id1=${tempNewA}&id2=${player.id}`;
+        return;
+    }
+});
 
       resultsContainer.appendChild(div);
     });
