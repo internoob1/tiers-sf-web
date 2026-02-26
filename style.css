@@ -709,3 +709,73 @@ tr:hover {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================
+   CONTROLES DEL COMPARADOR (A, NUEVA, B)
+   ============================ */
+
+#compareControls {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    opacity: 0;
+    animation: fadeInControls 0.6s ease forwards;
+}
+
+@keyframes fadeInControls {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.compare-btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+    background: linear-gradient(135deg, #0c111a, #111827);
+    color: var(--text-main);
+    font-family: 'Rajdhani';
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.22s ease;
+    box-shadow: 0 0 0 1px rgba(15,23,42,0.9);
+}
+
+.compare-btn:hover {
+    background: radial-gradient(circle at top left, rgba(0,170,255,0.18), #0b1019 55%, #05070b 100%);
+    border-color: var(--accent);
+    box-shadow:
+        0 0 0 1px rgba(0,170,255,0.45),
+        0 10px 22px rgba(0,0,0,0.6);
+    transform: translateY(-2px);
+}
+
+#compareControls::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 12px var(--accent-soft);
+}
+
+#compareContainer {
+    background: linear-gradient(135deg, #0c111a, #111827);
+    padding: 25px 20px;
+    border-radius: 14px;
+    box-shadow:
+        0 0 0 1px rgba(15,23,42,0.9),
+        0 18px 40px rgba(0,0,0,0.7);
+    animation: fadeInCompare 0.6s ease;
+}
+
+@keyframes fadeInCompare {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
