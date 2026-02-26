@@ -658,3 +658,54 @@ tr:hover {
   from { transform: scale(0.85); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+/* ============================
+   FOOTER PROFESIONAL TIERS SF (C1)
+   ============================ */
+
+#tiers-footer-pro {
+    margin-top: 40px;
+    padding: 25px 0 30px 0;
+    background: transparent;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    opacity: 0;
+    animation: footerFadePro 0.8s ease forwards;
+}
+
+#tiers-footer-pro .footer-line {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto 18px auto;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 12px var(--accent-soft);
+}
+
+#tiers-footer-pro .footer-links {
+    margin-bottom: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+#tiers-footer-pro .footer-links a {
+    color: var(--text-soft);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#tiers-footer-pro .footer-links a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-soft);
+}
+
+#tiers-footer-pro .footer-copy {
+    color: #6b7280;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+}
+
+@keyframes footerFadePro {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
