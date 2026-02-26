@@ -7,9 +7,9 @@
         "weaponsRank": "LT3",
         "mixedRank": "HT3",
         "score": 35,
-        "lastTestDate": "2026-02-25T02:24:55.630Z",
+        "lastTestDate": "2026-02-23T17:48:50.280Z",
         "testerId": "790702870286696468",
-        "avatar": "601d17dbe8c4414aee639e3f032e4c6e",
+        "avatar": null,
         "position": 1
     },
     {
@@ -20,9 +20,9 @@
         "weaponsRank": "LT3",
         "mixedRank": "LT3",
         "score": 30,
-        "lastTestDate": "2026-02-25T02:16:13.598Z",
+        "lastTestDate": "2026-02-16T17:33:07.932Z",
         "testerId": "790702870286696468",
-        "avatar": "c845ae5d97fb3def728d0695893374fa",
+        "avatar": null,
         "position": 2
     },
     {
@@ -33,9 +33,9 @@
         "weaponsRank": "LT3",
         "mixedRank": "HT4",
         "score": 25,
-        "lastTestDate": "2026-02-25T02:25:06.250Z",
+        "lastTestDate": "2026-02-17T17:56:01.755Z",
         "testerId": "790702870286696468",
-        "avatar": "248499ad3620ca470ce1026c40c9f975",
+        "avatar": null,
         "position": 3
     },
     {
@@ -46,9 +46,9 @@
         "weaponsRank": "LT4",
         "mixedRank": "LT3",
         "score": 23,
-        "lastTestDate": "2026-02-25T02:25:17.086Z",
+        "lastTestDate": "2026-02-23T17:17:55.362Z",
         "testerId": "790702870286696468",
-        "avatar": "515b6b6ff5e349a6da1e7a0815f31a28",
+        "avatar": null,
         "position": 4
     },
     {
@@ -59,9 +59,9 @@
         "weaponsRank": "HT5",
         "mixedRank": "LT3",
         "score": 17,
-        "lastTestDate": "2026-02-25T02:25:37.828Z",
+        "lastTestDate": "2026-02-22T16:41:17.021Z",
         "testerId": "790702870286696468",
-        "avatar": "985e33ad9af801dcb1cba8893d5d6643",
+        "avatar": null,
         "position": 5
     },
     {
@@ -72,9 +72,9 @@
         "weaponsRank": "Unranked",
         "mixedRank": "HT5",
         "score": 12,
-        "lastTestDate": "2026-02-25T02:26:41.229Z",
+        "lastTestDate": "2026-02-21T16:15:54.985Z",
         "testerId": "790702870286696468",
-        "avatar": "ca0299b2605be856d4eb86f74b7ed1ae",
+        "avatar": null,
         "position": 6
     },
     {
@@ -85,9 +85,9 @@
         "weaponsRank": "LT5",
         "mixedRank": "LT5",
         "score": 3,
-        "lastTestDate": "2026-02-25T02:27:59.327Z",
+        "lastTestDate": "2026-02-21T15:03:36.273Z",
         "testerId": "790702870286696468",
-        "avatar": "313e99d42c29d3eaf7460e2ad9f1f8c3",
+        "avatar": null,
         "position": 7
     },
     {
@@ -128,18 +128,5 @@
         "testerId": null,
         "avatar": null,
         "position": 10
-    },
-    {
-        "id": "1346480865089290311",
-        "nick": "Notyet",
-        "region": "SA",
-        "meleeRank": "Unranked",
-        "weaponsRank": "Unranked",
-        "mixedRank": "Unranked",
-        "score": 0,
-        "lastTestDate": null,
-        "testerId": null,
-        "avatar": null,
-        "position": 11
     }
 ]
