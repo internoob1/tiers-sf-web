@@ -102,16 +102,6 @@ function renderPlayer(containerId, player, rival) {
         card.style.transform = "scale(1)";
     }, 10);
 }
-    // Animación fade-in TIERS SF
-const card = container.firstElementChild;
-card.style.opacity = 0;
-card.style.transform = "scale(0.95)";
-setTimeout(() => {
-  card.style.transition = "0.25s ease";
-  card.style.opacity = 1;
-  card.style.transform = "scale(1)";
-}, 10);
-}
 
 function rankRow(label, rank, rivalRank) {
     const better = rankValue(rank) > rankValue(rivalRank);
