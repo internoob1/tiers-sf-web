@@ -199,13 +199,6 @@ const overlay = document.getElementById("rivalSelectorOverlay");
 const searchInput = document.getElementById("rivalSearchInput");
 const resultsContainer = document.getElementById("rivalResults");
 
-changeRivalBtn.addEventListener("click", () => {
-  overlay.classList.remove("hidden");
-  searchInput.value = "";
-  resultsContainer.innerHTML = "";
-  searchInput.focus();
-});
-
 overlay.addEventListener("click", (e) => {
   if (e.target === overlay) {
     overlay.classList.add("hidden");
