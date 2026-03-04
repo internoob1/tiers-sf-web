@@ -107,11 +107,11 @@
         "nick": "Notyet",
         "region": "SA",
         "meleeRank": "LT3",
-        "weaponsRank": "Unranked",
+        "weaponsRank": "LT3",
         "mixedRank": "Unranked",
-        "lastTestDate": "2026-03-04T00:31:27.907Z",
+        "lastTestDate": "2026-03-04T00:50:19.663Z",
         "testerId": "790702870286696468",
-        "score": 10,
+        "score": 20,
         "avatar": "d3f3a211e6df5fa36f094849aca8fc05"
     }
 }
