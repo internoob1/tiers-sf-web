@@ -106,12 +106,12 @@
     "1346480865089290311": {
         "nick": "Notyet",
         "region": "SA",
-        "meleeRank": "Unranked",
+        "meleeRank": "LT3",
         "weaponsRank": "Unranked",
         "mixedRank": "Unranked",
-        "lastTestDate": null,
-        "testerId": null,
-        "score": 0,
-        "avatar": null
+        "lastTestDate": "2026-03-04T00:31:27.907Z",
+        "testerId": "790702870286696468",
+        "score": 10,
+        "avatar": "d3f3a211e6df5fa36f094849aca8fc05"
     }
 }
